@@ -13,5 +13,15 @@ before_script:
   - pip install -r requirements-test.txt
 
 test:
+  services:
+    - name: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
+      alias: elasticsearch
+      command: [ "bin/elasticsearch", "-Ediscovery.type=single-node" ]
   script:
+    - python -m venv .venv
+    - source .venv/bin/activate
+    - pip install -r requirements-test.txt
+    - curl "http://elasticsearch:9200/_cat/health"
     - pytest
+
+
