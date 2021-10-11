@@ -25,6 +25,6 @@ test:
     - source .venv/bin/activate
     - pip install -r requirements-test.txt
     - curl "http://elasticsearch:9200/_cat/health"
-    - curl "-d xxx -X POST http://elasticsearch:9200/_security/user/_password"
+    - curl "-d '{\"password\": \"xxx\"}' -X POST 'http://elasticsearch:9200/_security/user/_password'"
     - curl "http://elasticsearch:9200/_cat/health"
     - pytest
