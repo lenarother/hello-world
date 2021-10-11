@@ -16,7 +16,7 @@ test:
   services:
     - name: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
       alias: elasticsearch
-      command: [ "bin/elasticsearch", "-Ediscovery.type=single-node" ]
+      command: [ "bin/elasticsearch", "-Ediscovery.type=single-node", "bin/elasticsearch-setup-passwords", "xxx" ]
   variables:
     ELASTICSEARCH_URL: "http://elasticsearch:9200"
     ELASTIC_PASSWORD: xxx
