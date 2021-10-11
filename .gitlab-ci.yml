@@ -16,7 +16,7 @@ test:
   services:
     - name: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
       alias: elasticsearch
-      command: [ "bin/elasticsearch", "-Ediscovery.type=single-node", "bin/elasticsearch-setup-passwords", "xxx" ]
+      command: [ "bin/elasticsearch", "-Ediscovery.type=single-node"]
   variables:
     ELASTICSEARCH_URL: "http://elasticsearch:9200"
     ELASTIC_PASSWORD: xxx
@@ -24,5 +24,7 @@ test:
     - python -m venv .venv
     - source .venv/bin/activate
     - pip install -r requirements-test.txt
+    - curl "http://elasticsearch:9200/_cat/health"
+    - curl "-d xxx -X POST http://elasticsearch:9200/_security/user/_password"
     - curl "http://elasticsearch:9200/_cat/health"
     - pytest
