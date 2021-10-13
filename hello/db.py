@@ -18,7 +18,7 @@ def get_es_connection():
 
     if not _es:
         _es = Elasticsearch(
-            hosts=f'{ES_HOST}:{ES_PORT}',
+            hosts=f'http://0.0.0.0:9200',
             {},
             #http_auth=(ES_USER, ES_PASSWD)
         )
