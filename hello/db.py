@@ -21,8 +21,5 @@ def get_es_connection():
             hosts='elasticsearch:9200',
             http_auth=(ES_USER, ES_PASSWD)
         )
-        # _es = Elasticsearch('elasticsearch:9200',)
-        #     #http_auth=(ES_USER, ES_PASSWD)
-        # connections.add_connection('default', _es)
 
     return _es
