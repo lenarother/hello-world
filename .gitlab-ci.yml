@@ -6,8 +6,11 @@
 
 # Official language image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/python/tags/
-image: python:latest
+variables:
+  ELASTICSEARCH_USER: "elasticsearch"
+  ELASTICSEARCH_PASSWORD: "xxx"
 
+image: python:latest
 
 before_script:
   - pip install -r requirements-test.txt
