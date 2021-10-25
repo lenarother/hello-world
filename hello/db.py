@@ -17,8 +17,12 @@ def get_es_connection():
     global _es
 
     if not _es:
-        _es = Elasticsearch('elasticsearch:9200',)
-            #http_auth=(ES_USER, ES_PASSWD)
-        connections.add_connection('default', _es)
+        _es = Elasticsearch(
+            hosts='elasticsearch:9200',
+            http_auth=(ES_USER, ES_PASSWD)
+        )
+        # _es = Elasticsearch('elasticsearch:9200',)
+        #     #http_auth=(ES_USER, ES_PASSWD)
+        # connections.add_connection('default', _es)
 
     return _es
