@@ -16,6 +16,7 @@ image: python:latest
 
 before_script:
   - pip install -r requirements-test.txt
+  - eval export ELASTICSEARCH_HOST="elasticsearch"
 
 test:
   services:
