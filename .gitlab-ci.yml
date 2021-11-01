@@ -21,7 +21,7 @@ test:
       alias: elasticsearch
       command: [ "bin/elasticsearch", "-Ediscovery.type=single-node"]
   variables:
-    ELASTICSEARCH_USER: "elasticsearch"
+    ELASTICSEARCH_USER: "elastic"
     ELASTICSEARCH_PASSWORD: "xxx"
   script:
     - python -m venv .venv
