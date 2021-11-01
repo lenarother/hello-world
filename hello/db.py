@@ -5,10 +5,10 @@ import os
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import connections
 
-ELASTICSEARCH_USER = os.getenv('ES_USER', 'elastic')
-ELASTICSEARCH_PASSWORD = os.getenv('ES_PASSWD', 'xxx')
-ELASTICSEARCH_HOST = os.getenv('ES_HOST', 'elasticsearch')
-ELASTICSEARCH_PORT = os.getenv('ES_PORT', '9200')
+ELASTICSEARCH_USER = os.getenv('ELASTICSEARCH_USER', 'elastic')
+ELASTICSEARCH_PASSWORD = os.getenv('ELASTICSEARCH_PASSWORD', 'xxx')
+ELASTICSEARCH_HOST = os.getenv('ELASTICSEARCH_HOST', 'elasticsearch')
+ELASTICSEARCH_PORT = os.getenv('ELASTICSEARCH_PORT', '9200')
 
 _es = None
 
