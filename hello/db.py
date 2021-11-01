@@ -7,7 +7,7 @@ from elasticsearch_dsl import connections
 
 ELASTICSEARCH_USER = os.getenv('ES_USER', 'elastic')
 ELASTICSEARCH_PASSWORD = os.getenv('ES_PASSWD', 'xxx')
-ELASTICSEARCH_HOST = os.getenv('ES_HOST', 'localhost')
+ELASTICSEARCH_HOST = os.getenv('ES_HOST', 'elasticsearch')
 ELASTICSEARCH_PORT = os.getenv('ES_PORT', '9200')
 
 _es = None
