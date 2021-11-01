@@ -7,7 +7,7 @@
 # Official language image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/python/tags/
 variables:
-  ELASTICSEARCH_USER: "elastic"
+  ELASTICSEARCH_USER: "elasticsearch"
   ELASTICSEARCH_PASSWORD: "xxx"
 
 image: python:latest
@@ -21,7 +21,7 @@ test:
       alias: elasticsearch
       command: [ "bin/elasticsearch", "-Ediscovery.type=single-node"]
   variables:
-    ELASTICSEARCH_USER: "elastic"
+    ELASTICSEARCH_USER: "elasticsearch"
     ELASTICSEARCH_PASSWORD: "xxx"
   script:
     - python -m venv .venv
