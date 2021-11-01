@@ -5,10 +5,10 @@ import os
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import connections
 
-ES_USER = os.getenv('ES_USER', 'elastic')
-ES_PASSWD = os.getenv('ES_PASSWD', 'xxx')
-ES_HOST = os.getenv('ES_HOST', 'localhost')
-ES_PORT = os.getenv('ES_PORT', '9200')
+ELASTICSEARCH_USER = os.getenv('ES_USER', 'elastic')
+ELASTICSEARCH_PASSWORD = os.getenv('ES_PASSWD', 'xxx')
+ELASTICSEARCH_HOST = os.getenv('ES_HOST', 'localhost')
+ELASTICSEARCH_PORT = os.getenv('ES_PORT', '9200')
 
 _es = None
 
@@ -18,10 +18,10 @@ def get_es_connection():
 
     if not _es:
         _es = Elasticsearch(
-            hosts='elasticsearch:9200',
-            http_auth=(ES_USER, ES_PASSWD)
+            hosts=f'{ELASTICSEARCH_HOST}:{ELASTICSEARCH_PORT}',
+            http_auth=(ELASTICSEARCH_USER, ELASTICSEARCH_PASSWORD)
         )
-        #if _es.ping():
-        #    connections.add_connection('default', _es)
+        if _es.ping():
+            connections.add_connection('default', _es)
 
     return _es
