@@ -21,6 +21,7 @@ def get_es_connection():
             hosts=f'{ES_HOST}:{ES_PORT}',
             http_auth=(ES_USER, ES_PASSWD)
         )
-        connections.add_connection('default', _es)
+        if _es.ping():
+            connections.add_connection('default', _es)
 
     return _es
