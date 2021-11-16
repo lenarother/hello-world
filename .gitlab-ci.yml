@@ -10,7 +10,7 @@ image: python:latest
 
 before_script:
   - pip install -r requirements-test.txt
-  - eval export ELASTICSEARCH_HOST=$ELASTICSEARCH_HOST
+  - eval export ELASTICSEARCH_HOST="${ELASTICSEARCH_HOST}"
 
 test:
   services:
@@ -20,7 +20,7 @@ test:
   variables:
     ELASTICSEARCH_USER: "elastic"
     ELASTICSEARCH_PASSWORD: "xxx"
-    ELASTICSEARCH_HOST: $ELASTICSEARCH_HOST
+    ELASTICSEARCH_HOST: "${ELASTICSEARCH_HOST}"
     ELASTICSEARCH_PORT: "9200"
   script:
     - python -m venv .venv
