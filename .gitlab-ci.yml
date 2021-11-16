@@ -8,6 +8,9 @@
 # https://hub.docker.com/r/library/python/tags/
 image: python:latest
 
+variables:
+  ELASTICSEARCH_HOST: $ELASTICSEARCH_HOST
+
 before_script:
   - pip install -r requirements-test.txt
   - eval export ELASTICSEARCH_HOST="${ELASTICSEARCH_HOST}"
