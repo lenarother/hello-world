@@ -11,6 +11,8 @@ jobs:
         env:
           ELASTICSEARCH_USER: "elastic"
           ELASTICSEARCH_PASSWORD: "xxx"
+          ELASTICSEARCH_HOST: "localhost"
+          ELASTICSEARCH_PORT: "9200"
         ports:
         - 9200/tcp
         options: -e="discovery.type=single-node" --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s --health-timeout=5s --health-retries=10
